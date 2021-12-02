@@ -1,0 +1,34 @@
+/**
+     * Removes the last node of this list.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @returns {any} The data from the node that was removed.
+     */
+    removeBack() { 
+        // if list is empty
+        if (this.head == null){
+            return null;
+        }
+        //  create a variable to hold the data for this.head
+        let secondToLast = this.head;
+        // if list has only one node
+        if (this.head.next == null){
+            this.head == null;
+            return secondToLast.data;
+        }
+        // while we have yet to reach the second to last node
+        // increment through list
+        while (secondToLast.next.next != null){
+            secondToLast = secondToLast.next;
+        }
+        // now that we have reached the second to last list
+        // create a temporary variable to hold onto the value
+        // of the node we are about to remove
+        let temp = secondToLast.next;
+        // remove last node
+        secondToLast.next = null;
+        // show the removed node in console
+        console.log(temp.data + " has been removed from the list");
+        // return removed node
+        return temp.data;
+    }
