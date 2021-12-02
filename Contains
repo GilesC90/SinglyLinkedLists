@@ -1,0 +1,36 @@
+    /**
+     * Determines whether or not the given search value exists in this list.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} val The data to search for in the nodes of this list.
+     * @returns {boolean}
+
+     */
+    contains(val) { 
+        // check if list is empty
+        if (this.head == null){
+            console.log(val + " is not in Linked List");
+            return false;
+        }
+        // create a variable to keep track of list head
+        let runner = this.head
+        // if head equals the entered parameter
+        if (runner.data == val){
+            console.log(val + " is in Linked List");
+            return true;
+        }
+        // while we have yet to reach the end of the list 
+        while (runner.next != null){
+            // if head equals the entered parameter
+            if(runner.data == val){
+                console.log(val + " is in Linked List");
+                return true;
+            }
+            // else, runner is now runner.next
+            runner = runner.next;
+        }
+        // if we have reached the end of the list without
+        // finding the parameter inside, return false
+        console.log(val + " is not in Linked List");
+        return false;
+    }
