@@ -1,0 +1,13 @@
+    // function that prints out list for easy readabilty
+    viewListData(){
+        // create a variable to represent the head
+        // of our SLL
+        let current = this.head;
+        // while we are inside of our list
+        while (current){
+            // log the value of current
+            console.log(current.data);
+            // allow current to iterate through list
+            current = current.next;
+        }
+    }
