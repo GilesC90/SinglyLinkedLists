@@ -1,0 +1,28 @@
+    /**
+     * Determines whether or not the given search value exists in this list.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} val The data to search for in the nodes of this list.
+     * @param {?node} current The current node during the traversal of this list
+     *    or null when the end of the list has been reached.
+     * @returns {boolean}
+
+     */
+    containsRecursive(val, current = this.head) {
+        // check if list is empty
+        if (current == null){
+            console.log(val + " is not in Linked List");
+            return false;
+        }
+        // if current equals the entered parameter
+        if (current.data == val){
+            console.log(val + " is in Linked List");
+            return true;
+        }
+        // if not, run recursion. The only difference is this time
+        // we want current to iterate through the list to the 
+        // next node.
+        else{
+            this.containsRecursive(val, current = current.next)
+        }
+    }
